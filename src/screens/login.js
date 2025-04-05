@@ -14,7 +14,7 @@ export default function Login({ navigation }) {
     const result = await login(email, password);
     if (result.success) {
       await AsyncStorage.setItem("usersSession", JSON.stringify(result));
-      navigation.navigate("home");
+      navigation.navigate("MainApp");
     }
 
     setEmail("");
@@ -24,11 +24,8 @@ export default function Login({ navigation }) {
   const checkUserSession = async () => {
     const session = await AsyncStorage.getItem("usersSession");
     if (session) {
-      navigation.navigate("home");
-    } else {
-      console.log("Nessuna sessione salvata");
-      navigation.navigate("login");
-    }
+      navigation.navigate("MainApp");
+    } 
   };
 
   useEffect(() => {
