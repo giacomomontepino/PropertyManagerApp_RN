@@ -5,75 +5,85 @@ import { useApi } from "../context/api/apiProvider";
 import GraficPieChart from "../components/graficPieChart";
 import GraficBarChart from "../components/graficBarChart";
 import { Picker } from "@react-native-picker/picker";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SecondBarChart from "../components/secondBarChart";
+import SlashScreen from "./slashScreen";
 
 export default function Home() {
-  const {
-    properties,
-    currentUser,
-    futureReservationsSum,
-    totalTurnoverSum,
-    totalTurnoverByMonth,
-  } = useApi();
+  const { properties, currentUser, futureReservationsSum, totalTurnoverSum } =
+    useApi();
   const [selectedProperty, setSelectedProperty] = useState(properties[0].name);
-
+  const [showSlash, setShowSlash] = useState(true);
+  
   const propertyNames = properties.map((prop) => prop.name);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSlash(false);
+    }, 2000);
+    
+    // Pulizia del timer
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSlash) {
+    return <SlashScreen />;
+  }
+
   return (
-    <View style={styles.general}>
-      <Text style={styles.title}>
-        {currentUser.gender === "Male"
-          ? `Benvenuto ${currentUser.name}`
-          : `Benvenuta ${currentUser.name}`}
-      </Text>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        bounces={true}
-        decelerationRate="normal"
-        scrollEventThrottle={20}
-        contentContainerStyle={{ paddingBottom: 150 }}
-      >
-        <View style={styles.chart}>
-          <GraficPieChart />
-        </View>
-        <Text style={styles.text}>Fatturato del mese</Text>
-        <View style={styles.turnover}>
-          <GraficBarChart selectedRoom={selectedProperty} />
-        </View>
-        <Picker
-          selectedValue={selectedProperty}
-          onValueChange={(itemValue) => setSelectedProperty(itemValue)}
-          style={styles.picker}
+      <View style={styles.general}>
+        <Text style={styles.title}>
+          {currentUser.gender === "Male"
+            ? `Bentornato ${currentUser.name}`
+            : `Bentornata ${currentUser.name}`}
+        </Text>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          bounces={true}
+          decelerationRate="normal"
+          scrollEventThrottle={20}
+          contentContainerStyle={{ paddingBottom: 150 }}
         >
-          {propertyNames.map((propertyName, index) => (
-            <Picker.Item
-              label={propertyName}
-              value={propertyName}
-              key={index}
-            />
-          ))}
-        </Picker>
-        <View style={styles.container}>
-          <View style={styles.box}>
-            <Text style={styles.text}>Fatturato da inizio anno</Text>
-            <View style={styles.totalBox}>
-              <Text style={styles.total}>{totalTurnoverSum}€</Text>
+          <View style={styles.chart}>
+            <GraficPieChart />
+          </View>
+          <Text style={styles.text}>Fatturato del mese</Text>
+          <View style={styles.turnover}>
+            <GraficBarChart selectedRoom={selectedProperty} />
+          </View>
+          <Picker
+            selectedValue={selectedProperty}
+            onValueChange={(itemValue) => setSelectedProperty(itemValue)}
+            style={styles.picker}
+          >
+            {propertyNames.map((propertyName, index) => (
+              <Picker.Item
+                label={propertyName}
+                value={propertyName}
+                key={index}
+              />
+            ))}
+          </Picker>
+          <View style={styles.container}>
+            <View style={styles.box}>
+              <Text style={styles.text}>Fatturato da inizio anno</Text>
+              <View style={styles.totalBox}>
+                <Text style={styles.total}>{totalTurnoverSum}€</Text>
+              </View>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text}>Prenotazioni future</Text>
+              <View style={styles.totalBox}>
+                <Text style={styles.total}>{futureReservationsSum}€</Text>
+              </View>
             </View>
           </View>
-          <View style={styles.box}>
-            <Text style={styles.text}>Prenotazioni future</Text>
-            <View style={styles.totalBox}>
-              <Text style={styles.total}>{futureReservationsSum}€</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.turnover}>
+          <View style={styles.turnover}>
             <Text style={styles.text}>Fatturato Totale Mensile </Text>
             <SecondBarChart />
-        </View>
-      </ScrollView>
-    </View>
+          </View>
+        </ScrollView>
+      </View>
   );
 }
 

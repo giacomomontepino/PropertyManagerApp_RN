@@ -8,14 +8,15 @@ import Profile from "./src/screens/profile";
 import Reservation from "./src/screens/reservation";
 import AccountStatement from "./src/screens/accountStatement";
 import { Ionicons } from "@expo/vector-icons";
+import SplashScreen from "./src/screens/slashScreen";
 
-// 1. Creazione degli Stack Navigator per ogni sezione
+//Creazione degli Stack Navigator per ogni sezione
 const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const ReservationStack = createStackNavigator();
 const AccountStatementStack = createStackNavigator();
 
-// Componenti Stack per ogni tab
+//Componenti Stack per ogni tab
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
@@ -64,7 +65,7 @@ function AccountStatementStackScreen() {
   );
 }
 
-// 2. Creazione del Tab Navigator principale
+//Creazione del Tab Navigator principale
 function MainTabs() {
   const Tab = createBottomTabNavigator();
 
@@ -92,28 +93,28 @@ function MainTabs() {
       <Tab.Screen 
         name="HomeTab" 
         component={HomeStackScreen} 
-        options={{ tabBarLabel: 'home' }}
+        options={{ tabBarLabel: 'Home' }}
       />
       <Tab.Screen 
         name="ReservationTab" 
         component={ReservationStackScreen} 
-        options={{ tabBarLabel: 'reservation' }}
+        options={{ tabBarLabel: 'Reservation' }}
       />
       <Tab.Screen 
         name="AccountStatementTab" 
         component={AccountStatementStackScreen} 
-        options={{ tabBarLabel: 'accountStatement' }}
+        options={{ tabBarLabel: 'Account Statement' }}
       />
       <Tab.Screen 
         name="ProfileTab" 
         component={ProfileStackScreen} 
-        options={{ tabBarLabel: 'profile' }}
+        options={{ tabBarLabel: 'Profile' }}
       />
     </Tab.Navigator>
   );
 }
 
-// 3. Stack Navigator principale (per Login -> Main App)
+//Stack Navigator principale 
 const MainStack = createStackNavigator();
 
 export default function App() {
