@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "lsaladin0@infoseek.co.jp",
+      "password": "zU2+g28Yexwwb",
+      "name": "Lianna Saladin",
+      "gender": "Female",
+      "phone": "360-981-6618",
+      "sessionToken": "62fd7f6c-ba3d-4119-bbde-657edc166dd3",
+      "pushToken": "b21a14d6-8547-462f-b85e-3f7a45bd1ecf"
+    }
+  ],
+  "properties": [
+    {
+      "properties_id": 1,
+      "name": "Mare Blu",
+      "employment_percentage": 76,
+      "monthly_turnover": 5000,
+      "year_turnover": 45000,
+      "future_reservations": 2106,
+      "turnover_trend": [
+        { "monthly": "January", "turnover": 4000 },
+        { "monthly": "February", "turnover": 4200 },
+        { "monthly": "March", "turnover": 5000 },
+        { "monthly": "April", "turnover": 5200 }
+      ]
+    },
+    {
+      "properties_id": 2,
+      "name": "Vista Lago",
+      "employment_percentage": 54,
+      "monthly_turnover": 3200,
+      "year_turnover": 36000,
+      "future_reservations": 2500,
+      "turnover_trend": [
+        { "monthly": "January", "turnover": 3100 },
+        { "monthly": "February", "turnover": 3300 },
+        { "monthly": "March", "turnover": 3200 },
+        { "monthly": "April", "turnover": 3400 }
+      ]
+    },
+    {
+      "properties_id": 3,
+      "name": "Alpine",
+      "employment_percentage": 33,
+      "monthly_turnover": 7250,
+      "year_turnover": 84300,
+      "future_reservations": 3600,
+      "turnover_trend": [
+        { "monthly": "January", "turnover": 7200 },
+        { "monthly": "February", "turnover": 6900 },
+        { "monthly": "March", "turnover": 7500 },
+        { "monthly": "April", "turnover": 8000 }
+      ]
+    }
+  ],
+  "totals": {
+    "employment_percentage": 88,
+    "monthly_turnover": 15450,
+    "year_turnover": 165300,
+    "future_reservations": 8206,
+    "turnover_trend": [
+      { "monthly": "January", "turnover": 17200 },
+      { "monthly": "February", "turnover": 12000 },
+      { "monthly": "March", "turnover": 12900 },
+      { "monthly": "April", "turnover": 16500 },
+      { "monthly": "May", "turnover": 14780 },
+      { "monthly": "June", "turnover": 18000 }
+    ]
+  },
+  "notifications": []
+}
