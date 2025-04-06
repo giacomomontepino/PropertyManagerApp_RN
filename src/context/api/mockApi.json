@@ -15,8 +15,9 @@
     {
       "properties_id": 1,
       "name": "Mare Blu",
+      "fee": 30,
       "employment_percentage": 76,
-      "monthly_turnover": 5000,
+      "monthly_turnover": 5200,
       "year_turnover": 45000,
       "future_reservations": 2106,
       "turnover_trend": [
@@ -29,8 +30,9 @@
     {
       "properties_id": 2,
       "name": "Vista Lago",
+      "fee": 20,
       "employment_percentage": 54,
-      "monthly_turnover": 3200,
+      "monthly_turnover": 3400,
       "year_turnover": 36000,
       "future_reservations": 2500,
       "turnover_trend": [
@@ -43,8 +45,9 @@
     {
       "properties_id": 3,
       "name": "Alpine",
+      "fee": 35,
       "employment_percentage": 33,
-      "monthly_turnover": 7250,
+      "monthly_turnover": 8000,
       "year_turnover": 84300,
       "future_reservations": 3600,
       "turnover_trend": [
@@ -55,19 +58,5 @@
       ]
     }
   ],
-  "totals": {
-    "employment_percentage": 88,
-    "monthly_turnover": 15450,
-    "year_turnover": 165300,
-    "future_reservations": 8206,
-    "turnover_trend": [
-      { "monthly": "January", "turnover": 17200 },
-      { "monthly": "February", "turnover": 12000 },
-      { "monthly": "March", "turnover": 12900 },
-      { "monthly": "April", "turnover": 16500 },
-      { "monthly": "May", "turnover": 14780 },
-      { "monthly": "June", "turnover": 18000 }
-    ]
-  },
   "notifications": []
 }

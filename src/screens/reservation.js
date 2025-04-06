@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { colors } from "../utils/colors";
 import CardReservation from "../components/cardReservation";
-import { useApi } from "../context/api/apiProvider";
+import { useApi } from "../context/apiProvider";
 import { useState, useEffect } from "react";
 import SlashScreen from "./slashScreen";
 

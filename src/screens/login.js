@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { useState, useEffect } from "react";
-import { useApi } from "../context/api/apiProvider";
+import { useApi } from "../context/apiProvider";
 import ButtonCustomized from "../components/ButtonCustomized";
 import { colors } from "../utils/colors";
 import AsyncStorage from "@react-native-async-storage/async-storage";

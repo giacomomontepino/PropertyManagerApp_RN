@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import { useApi } from "../context/api/apiProvider";
+import { useApi } from "../context/apiProvider";
 import { colors } from "../utils/colors";
 
 export default function FutureReservation({ selectedRoom }) {

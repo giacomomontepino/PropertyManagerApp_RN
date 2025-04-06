@@ -1,12 +1,5 @@
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
-import { useApi } from "../context/api/apiProvider";
+import { PieChart } from "react-native-chart-kit";
+import { useApi } from "../context/apiProvider";
 import { useEffect, useState } from "react";
 
 export default function GraficPieChart() {

@@ -1,12 +1,5 @@
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
-import { useApi } from "../context/api/apiProvider";
+import { BarChart } from "react-native-chart-kit";
+import { useApi } from "../context/apiProvider";
 
 export default function SecondBarChart() {
   const { totalTurnoverByMonth } = useApi();

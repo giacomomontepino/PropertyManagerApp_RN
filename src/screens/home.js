@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { colors } from "../utils/colors";
-import ButtonCustomized from "../components/ButtonCustomized";
-import { useApi } from "../context/api/apiProvider";
+import { useApi } from "../context/apiProvider";
 import GraficPieChart from "../components/graficPieChart";
 import GraficBarChart from "../components/graficBarChart";
 import { Picker } from "@react-native-picker/picker";

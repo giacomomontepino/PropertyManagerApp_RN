@@ -1,5 +1,5 @@
 import { BarChart } from "react-native-chart-kit";
-import { useApi } from "../context/api/apiProvider";
+import { useApi } from "../context/apiProvider";
 
 export default function GraficBarChart({ selectedRoom }) {
   const { properties } = useApi();
