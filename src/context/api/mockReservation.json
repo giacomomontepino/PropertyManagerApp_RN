@@ -1,0 +1,54 @@
+{
+  "reservations": [
+    {
+      "id": 1,
+      "ota": "airbnb",
+      "guestName": "Romain Stephens",
+      "roomName": "Mare Blu",
+      "checkInDate": "18.11.2025",
+      "checkOutDate": "22.11.2025",
+      "totalPrice": 700,
+      "guestsNumber": 4
+    },
+    {
+      "id": 2,
+      "ota": "booking",
+      "guestName": "Alida Spelman",
+      "roomName": "Vista Lago",
+      "checkInDate": "10.09.2025",
+      "checkOutDate": "20.09.2025",
+      "totalPrice": 1700,
+      "guestsNumber": 5
+    },
+    {
+      "id": 3,
+      "ota": "airbnb",
+      "guestName": "Yalonda Fabbro",
+      "roomName": "Alpine",
+      "checkInDate": "08.08.2025",
+      "checkOutDate": "25.08.2025",
+      "totalPrice": 2100,
+      "guestsNumber": 2
+    },
+    {
+      "id": 4,
+      "ota": "booking",
+      "guestName": "Jessee Jago",
+      "roomName": "Alpine",
+      "checkInDate": "16.06.2025",
+      "checkOutDate": "19.06.2025",
+      "totalPrice": 350,
+      "guestsNumber": 2
+    },
+    {
+      "id": 5,
+      "ota": "booking",
+      "guestName": "Harlin De Moreno",
+      "roomName": "Vista Lago",
+      "checkInDate": "15.10.2025",
+      "checkOutDate": "20.10.2025",
+      "totalPrice": 650,
+      "guestsNumber": 2
+    }
+  ]
+}
