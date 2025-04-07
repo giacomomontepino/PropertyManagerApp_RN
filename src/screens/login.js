@@ -1,15 +1,18 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { useState, useEffect } from "react";
 import { useApi } from "../context/apiProvider";
-import ButtonCustomized from "../components/ButtonCustomized";
 import { colors } from "../utils/colors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+//componenti
+import ButtonCustomized from "../components/ButtonCustomized";
 
 export default function Login({ navigation }) {
   const { login } = useApi();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //per salvare la sessione d'accesso
   const handleLogin = async () => {
     const result = await login(email, password);
     if (result.success) {
@@ -21,6 +24,7 @@ export default function Login({ navigation }) {
     setPassword("");
   };
 
+  //per riprenderla al login
   const checkUserSession = async () => {
     const session = await AsyncStorage.getItem("usersSession");
     if (session) {

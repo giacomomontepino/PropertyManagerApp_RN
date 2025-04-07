@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { colors } from "../utils/colors";
-import CardReservation from "../components/cardReservation";
 import { useApi } from "../context/apiProvider";
 import { useState, useEffect } from "react";
+
+//componenti
+import CardReservation from "../components/cardReservation";
 import SlashScreen from "./slashScreen";
 
 export default function Reservation() {

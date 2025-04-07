@@ -1,12 +1,14 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { colors } from "../utils/colors";
 import { useApi } from "../context/apiProvider";
-import GraficPieChart from "../components/graficPieChart";
-import GraficBarChart from "../components/graficBarChart";
 import { Picker } from "@react-native-picker/picker";
 import { useState, useEffect } from "react";
+
+//componenti
 import SecondBarChart from "../components/secondBarChart";
 import SlashScreen from "./slashScreen";
+import GraficBarChart from "../components/graficBarChart";
+import GraficPieChart from "../components/graficPieChart";
 import FutureReservation from "../components/futureReservation";
 
 export default function Home() {

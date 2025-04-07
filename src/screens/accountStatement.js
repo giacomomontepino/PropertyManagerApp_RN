@@ -1,10 +1,27 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import CardStatement from "../components/cardStatement";
 import { colors } from "../utils/colors";
 import { useApi } from "../context/apiProvider";
+import { useState, useEffect } from "react";
+
+//componenti
+import SlashScreen from "./slashScreen";
+import CardStatement from "../components/cardStatement";
 
 export default function AccountStatement() {
   const { properties, totalTurnoverByMonth } = useApi();
+  const [showSlash, setShowSlash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSlash(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSlash) {
+    return <SlashScreen />;
+  }
 
   //per estrarre fee e nome struttura
   const fee = properties.map((prop) => ({
@@ -46,7 +63,7 @@ export default function AccountStatement() {
         bounces={true}
         decelerationRate="normal"
         scrollEventThrottle={20}
-        contentContainerStyle={{ width: "90%" }}
+        contentContainerStyle={{ paddingBottom: 150, width: "90%" }}
       >
         {month.map((m) => (
           <CardStatement

@@ -5,18 +5,18 @@ import { colors } from "../utils/colors";
 export default function FutureReservation({ selectedRoom }) {
   const { properties } = useApi();
 
-  // Trova la proprietà selezionata
+  //Per trovare la proprietà selezionata
   const selectedProperty = properties?.find(
     (prop) => prop.name === selectedRoom
   );
 
-  // Controlla se esistono prenotazioni future
+  //Per controllare se esistono prenotazioni future
   const futureReservations = selectedProperty?.future_reservations;
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Prenotazioni future:</Text>
-      <Text style={styles.reservationText}>{futureReservations}</Text>
+      <Text style={styles.reservationText}>{futureReservations}€</Text>
     </View>
   );
 }

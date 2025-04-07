@@ -34,7 +34,7 @@ export default function SecondBarChart() {
     <BarChart
       style={chartStyle}
       data={chartData}
-      width={360}
+      width={365}
       height={220}
       chartConfig={chartConfig}
       showValuesOnTopOfBars={true}

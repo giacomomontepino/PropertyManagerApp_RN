@@ -10,7 +10,7 @@ export default function CardStatement({
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.imageContainer}>
         <Image
           source={require("../../assets/calendar.png")}
           style={styles.image}
@@ -51,12 +51,16 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 70,
+    height: 70,
     borderRadius: 15,
   },
+  imageContainer: {
+    flex: 1
+  },
   box: {
-    marginLeft: 5,
+    flex: 3,
+    marginLeft: 5
   },
   title: {
     fontSize: 20,
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   textFee: {
-    marginRight: 13,
+    marginRight: 7,
     fontSize: 15,
     fontWeight: "bold",
     marginTop: 8,

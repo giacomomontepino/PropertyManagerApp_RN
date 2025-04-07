@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
+
+//file JSON
 import mockData from "./api/mockApi.json";
 import mockReservation from "./api/mockReservation.json";
 
@@ -12,7 +14,7 @@ export function ApiProvider({ children }) {
   const [currentUser, setCurrentUser] = useState([]);
   const [properties, setProperties] = useState([]);
   const [reservations, setReservations] = useState([]);
-  const [statements, setStatements] = useState([]);
+  const [attachments, setAttachments] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +23,7 @@ export function ApiProvider({ children }) {
         setCurrentUser(mockData.users[0]);
         setProperties(mockData.properties);
         setReservations(mockReservation);
-        setStatements(mockStatement);
+        setAttachments(mockData.attachments)
       } catch (error) {
         console.log("Errore nel fetch:", error);
         setError(error);
@@ -29,6 +31,7 @@ export function ApiProvider({ children }) {
     };
     fetchData();
   }, []);
+
 
   const login = async (email, password) => {
     try {
@@ -86,7 +89,7 @@ export function ApiProvider({ children }) {
         totalTurnoverSum,
         totalTurnoverByMonth,
         reservations,
-        statements
+        attachments
       }}
     >
       {children}
