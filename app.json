@@ -26,6 +26,12 @@
     },
     "plugins": [
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a06def47-ea1f-43eb-ae39-b5ea4eb37830"
+      }
+    },
+    "owner": "montepino"
   }
 }

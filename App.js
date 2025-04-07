@@ -9,6 +9,8 @@ import Reservation from "./src/screens/reservation";
 import AccountStatement from "./src/screens/accountStatement";
 import { Ionicons } from "@expo/vector-icons";
 import Structure from "./src/screens/structures";
+import registerNNPushToken from 'native-notify';
+
 
 //Creazione degli Stack Navigator per ogni sezione
 const HomeStack = createStackNavigator();
@@ -138,6 +140,8 @@ function MainTabs() {
 const MainStack = createStackNavigator();
 
 export default function App() {
+  registerNNPushToken(29054, 'eqVVQkbC9KvZcFxrpllUK8');   
+
   return (
     <ApiProvider>
       <NavigationContainer>

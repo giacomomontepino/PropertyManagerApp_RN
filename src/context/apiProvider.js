@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+
 //file JSON
 import mockData from "./api/mockApi.json";
 import mockReservation from "./api/mockReservation.json";
@@ -11,10 +12,10 @@ export const useApi = () => useContext(ApiContext);
 export function ApiProvider({ children }) {
   const [apiData, setApiData] = useState([]);
   const [error, setError] = useState(null);
-  const [currentUser, setCurrentUser] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const [properties, setProperties] = useState([]);
   const [reservations, setReservations] = useState([]);
-  const [attachments, setAttachments] = useState([])
+  const [attachments, setAttachments] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +24,7 @@ export function ApiProvider({ children }) {
         setCurrentUser(mockData.users[0]);
         setProperties(mockData.properties);
         setReservations(mockReservation);
-        setAttachments(mockData.attachments)
+        setAttachments(mockData.attachments);
       } catch (error) {
         console.log("Errore nel fetch:", error);
         setError(error);
@@ -42,6 +43,7 @@ export function ApiProvider({ children }) {
       if (!user) {
         alert("Credenziali non trovate");
       }
+  
 
       return {
         ...user,
@@ -89,7 +91,7 @@ export function ApiProvider({ children }) {
         totalTurnoverSum,
         totalTurnoverByMonth,
         reservations,
-        attachments
+        attachments,
       }}
     >
       {children}

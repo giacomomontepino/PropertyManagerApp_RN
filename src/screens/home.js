@@ -17,11 +17,31 @@ export default function Home() {
   const [selectedProperty, setSelectedProperty] = useState(properties[0].name);
   const [showSlash, setShowSlash] = useState(true);
 
+
   const propertyNames = properties.map((prop) => prop.name);
+
+  //per inviare le notifiche push
+  const sendNotification = async () => {
+    const response = await fetch("https://app.nativenotify.com/api/notification", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        appId: 29054,
+        appToken: "eqVVQkbC9KvZcFxrpllUK8",
+        title: "Fantastico",
+        body: "Hai una nuova prenotazione!",
+        dateSent: new Date().toLocaleString() 
+      }),
+    });
+  };
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSlash(false);
+      sendNotification();
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -30,6 +50,9 @@ export default function Home() {
   if (showSlash) {
     return <SlashScreen />;
   }
+
+
+
 
   return (
     <View style={styles.general}>

@@ -136,7 +136,8 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 140,
-    borderRadius: "50%",
+    borderRadius: 65,
+    elevation: 5
   },
   textContainer: {
     flex: 1,
