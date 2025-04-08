@@ -1,15 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Login from "./src/screens/login";
 import { ApiProvider } from "./src/context/apiProvider";
-import Home from "./src/screens/home";
-import Profile from "./src/screens/profile";
-import Reservation from "./src/screens/reservation";
-import AccountStatement from "./src/screens/accountStatement";
 import { Ionicons } from "@expo/vector-icons";
-import Structure from "./src/screens/structures";
 import registerNNPushToken from 'native-notify';
+
+//componenti
+import Structure from "./src/screens/structures";
+import AccountStatement from "./src/screens/accountStatement";
+import Reservation from "./src/screens/reservation";
+import Profile from "./src/screens/profile";
+import Login from "./src/screens/login";
+import Home from "./src/screens/home";
 
 
 //Creazione degli Stack Navigator per ogni sezione
